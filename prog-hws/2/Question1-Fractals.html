@@ -1,0 +1,229 @@
+<!doctype html>
+<!author : Viswanath Pulle>
+<html>
+  <head>
+    <title>Computer Graphics Assignment 2</title>
+  <style>
+#grad1 {
+ 
+    background: #696969; /* For browsers that do not support gradients */
+    background: linear-gradient(to bottom, white , #FFDCB2); /* Standard syntax (must be last) */
+}
+</style>
+<style>
+.button {
+    background-color: #FF8C00;
+    border: none;
+    color: white;
+    padding: 10px 22px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 2px 1px;
+    cursor: pointer;
+    border-radius: 8px;
+    opacity: 0.8;
+    transition: 0.3s;
+    display: inline-block;
+}
+.button:hover {opacity: 1}
+</style>
+<style>
+.button1 {
+  background-color: red;
+  border: none;
+  color: white;
+  padding: 10px 22px;
+  text-align: center;
+  font-size: 16px;
+  margin: 2px 1px;
+  opacity: 0.8;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.button1:hover {opacity: 1}
+</style>
+<style>h1 {
+    color: #556B2F;
+    text-shadow: 2px 2px 4px #DFFFBF;
+}</style>
+
+
+
+  </head>
+  <body>
+    <div id = 'grad1'>
+      <center><h1>Question 1 - FRACTALS</h1></center>
+    </div>
+      <center>
+      <canvas id="canvas" width="600" height="500"
+style="border:3px solid black; background-color:#ffffff;">
+Your browser does not support the canvas element.
+</canvas></center>
+      <div id ='grad1'><b>
+      <center>
+      Choose a Shape: 
+            <select id="shape">
+              <option value="line">Line</option>
+              <option value="Arc">Arc</option>
+              <option value="tree">Fractal Tree</option>
+              
+            </select> 
+      
+          Choose the Ratio: 1/<input id="ratio" value="3" max="100" type="number">
+          Iterations:  <input id="iterations" value="0" type="number">
+         <p>
+Choose a Color: 
+<select id="color">
+        <option value="black">Choose Color</option>
+          <option value="#33cc33">Green</option>
+          <option value="#ff3300">Red</option>
+          <option value="#ffff00">Yellow</option>
+          <option value="#0033cc">Blue</option>
+          <option value="#4d0066">Purple</option>
+</select>
+Choose the line Width:
+<select id="linewidth">
+        <option value= '1'>Choose Linewidth</option>
+          <option value='2'>2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+</select> 
+<p>
+          <button class ="button" id="Submit">Submit</button> 
+          <button class ="button1" id="clear">Clear</button> 
+</p>    
+Note: For fractal tree, the best view happens at 9 iterations(start at 1), and linewidth 2        
+        </center>
+      
+   
+    <script >
+    // Canvas variables
+var canvas = document.getElementById('canvas');
+var can = canvas.getContext('2d');
+var submit = document.getElementById('Submit');
+var clear = document.getElementById('clear');
+
+can.translate(0, canvas.height);
+can.scale(1, -1);
+
+function drawFractal(inputPrimitive, ratio, iterations) {
+  can.clearRect(0, 0, canvas.width, canvas.height);
+  can.lineWidth =  document.getElementById("linewidth").value;
+  can.strokeStyle= document.getElementById("color").value;
+  if (shape == 'line') {
+    drawLineFractal(ratio, iterations);
+  } else if (shape == 'Arc') {
+    drawArcFractal(ratio, iterations);
+  } else if (shape == 'tree') {
+    drawTree(300, 0, 90, iterations, 20);
+  }
+}
+
+//function to draw line 
+function drawLineFractal(ratio, iterations) {
+  var x1 = 50, y1 = canvas.height / 2;
+  var x2 = canvas.width - 50, y2 = canvas.height / 2;
+  var points = [x1, y1, x2, y2];
+ 
+  for (var i = 0; i < iterations; i++) {
+    points = getLineFractalPoints(ratio, points);
+  }
+  
+  can.beginPath();
+  can.moveTo(points[0], points[1]);
+  for (var i = 2; i < points.length - 1; i+=2) {
+    can.lineTo(points[i], points[i+1]);
+  }
+  can.stroke();
+
+};
+//generator function for line
+function getLineFractalPoints(ratio, points) {
+  var newPoints = [], div = Math.pow(ratio, -1);
+  
+  for (var i = 0; i < points.length - 3; i+=2) { // generate points in between
+    var ini_x = points[i], ini_y = points[i+1];
+    var fin_x = points[i+2], fin_y = points[i+3];
+    var px_1 = ini_x, py_1 = ini_y, px_2, py_2, px_3, py_3;
+    newPoints.push(px_1);
+    newPoints.push(py_1);
+    for (var j = 1; j <= div; j++) { // get ratio
+      px_3 = ((1-(j/div)) * ini_x) + ((j/div) * fin_x);
+      py_3 = ((1-(j/div)) * ini_y) + ((j/div) * fin_y);
+      var length = Math.sqrt(Math.pow(px_3-px_1,2) + Math.pow(py_3-py_1,2));
+      if (j % 2 != 0) {
+        px_2 = (Math.cos(60*Math.PI/180) * (px_1 - px_3)) - (Math.sin(60*Math.PI/180) * (py_1 - py_3)) + px_3;
+        py_2 = (Math.sin(60*Math.PI/180) * (px_1 - px_3)) + (Math.cos(60*Math.PI/180) * (py_1 - py_3)) + py_3;
+      } else {
+        px_2 = (Math.cos(-60*Math.PI/180) * (px_1 - px_3)) - (Math.sin(-60*Math.PI/180) * (py_1 - py_3)) + px_3;
+        py_2 = (Math.sin(-60*Math.PI/180) * (px_1 - px_3)) + (Math.cos(-60*Math.PI/180) * (py_1 - py_3)) + py_3;
+      }
+      newPoints.push(px_2, py_2); newPoints.push(px_3, py_3);
+      px_1 = px_3;
+      py_1 = py_3;
+    }
+  }
+  return newPoints;
+};
+
+
+
+function drawArcFractal(ratio, iterations) {
+  var x = canvas.width / 2, y = canvas.height / 2, radius = canvas.height / 2 - 40, ini_x = x - radius,
+  temp1 =Math.pow(ratio, (i+1)), temp2 =Math.pow(ratio, -(i+1));
+  for (var i = 0; i < iterations; i++) {
+    var radius2 = radius * temp1 ;
+    for (var j = 0; j < temp2; j++) { var x = ini_x + radius2 + (j)*2*radius2;
+      can.beginPath();
+      can.arc(x, y, radius2, 0, Math.PI);
+      can.stroke();
+    }
+  }
+  can.beginPath();
+  can.arc(x, y, radius, 0, Math.PI);
+  can.stroke();
+}
+
+function drawLine(x1, y1, x2, y2, lw){
+console.log(lw);
+can.beginPath();
+can.moveTo(x1, y1);
+can.lineTo(x2, y2);
+can.lineWidth =  lw;
+can.closePath();
+can.stroke();
+}
+
+function drawTree(x1, y1, angle, depth, lw){
+lw =  document.getElementById("linewidth").value;
+if (depth != 0){
+    var x2 = x1 + (Math.cos(angle * Math.PI / 180.0) * depth * 10.0);
+    var y2 = y1 + (Math.sin(angle * Math.PI / 180.0) * depth * 10.0);
+    drawLine(x1, y1, x2, y2, lw);
+    drawTree(x2, y2, angle - 20, depth - 1, lw / 2);
+    drawTree(x2, y2, angle + 20, depth - 1, lw / 2);
+    }
+
+}
+
+
+clear.addEventListener('click', function() { can.clearRect(0,0, canvas.width, canvas.height);});
+submit.addEventListener('click', function() {
+  shape = document.getElementById("shape").value;
+  ratio = 1 / document.getElementById("ratio").value;
+  iterations = document.getElementById("iterations").value;
+  drawFractal(shape,ratio,iterations);
+});
+    </script>
+  </body>
+</html>
