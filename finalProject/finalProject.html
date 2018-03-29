@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<!Author: Viswanath Pulle>
+<html>
+
+<head>
+
+<title>Computer Graphics Final Project Week 1</title>
+
+</head>
+
+<body>
+<center>
+<h1>Computer Graphics Final Project Week 1</h1>
+</center>
+<center>
+
+<svg id ="car_front" width="280" height="300"style="border:5px solid black; background-color: white">
+  <text x="20" y="220" font-family="sans-serif" font-size="20px" fill="black">Front View</text>
+<text>Front View</text>
+<!-- Top -->
+  <rect x="30" y="10" width="180" height="130" fill="transparent" rx="80" stroke="crimson" stroke-width="10" />
+
+<!-- Body -->
+  <rect x="10" y="70" width="220" height="80" fill="crimson" rx="30" />
+ 
+<g>
+<!--bumper -->
+  <rect x="0" y="110" width="240" height="20" fill="#999" rx="10" />
+
+</g>  
+
+<g>
+<!-- Gold light -->
+  <circle r="15px" fill="gold" cx="40" cy="90"/>
+  <circle r="15px" fill="gold" cx="200" cy="90"/>
+
+</g>  
+<rect x="38" y="150" width="28" height="35" fill="#000" rx="6" />
+<rect x="180" y="150" width="28" height="35" fill="#000" rx="6" />
+<foreignObject id="button4" x="150" y="220" width="100" height="40" style="border: 3px solid black; background-color: #86b300; border-radius: 10px">
+    <html:button> Change Background</html:button>
+</foreignObject>
+</svg> 
+
+<svg id="Front View" xmlns='http://www.w3.org/2000/svg' version='1.1' width="300" height="300"style="border:5px solid black; background-color: grey">
+    <!-- Front View -->
+ <text x="20" y="220" font-family="sans-serif" font-size="20px" fill="black">Front View</text>   
+<rect id ="rectfv1" x="120" y="120" width="130" height="130" stroke="red" stroke-width="3" fill="yellow"/>  
+<polygon id ="polyfv1" points="120,120 185,37 250,120" style="fill:lime;stroke:red;stroke-width:3" />   
+<line id ="linefv1" x1="120" y1="120" x2="101" y2="145" stroke-width="2" stroke="red" />
+<line id ="linefv2" x1="250" y1="120" x2="269" y2="145" stroke-width="2" stroke="red" />    
+<rect id ="rectfv2" x="145" y="140" width="20" height="40" style="fill:rgb(0,0,0);stroke-width:1;stroke:rgb(0,0,0)" />
+<rect id ="rectfv3" x="205" y="140" width="20" height="40" style="fill:rgb(0,0,0);stroke-width:1;stroke:rgb(0,0,0)" /> 
+<path id ="pathfv1" d="M140 200 C 150 235, 215 235, 225 200" stroke="red" fill="blue"/>
+<path id ="pathfv2"d="M140 200 C 146 200, 215 200, 225 200" stroke="red" fill="transparent"/>
+
+<polyline id ="polyLfv1" points="140,20 160,20 160,67 140,90" style="fill:lime;stroke:purple;stroke-width:1" />
+
+<circle id ="cirfv1" cx="185" cy="85" r="20" stroke="black" stroke-width="1" fill="black" />
+<line id ="linefv7" x1="185" y1="105" x2="185" y2="65" stroke-width="1" stroke="red"/>
+<line id ="linefv8" x1="165" y1="85" x2="205" y2="85" stroke-width="1" stroke="red"/>     
+ <foreignObject id="button1" x="20" y="250" width="100" height="40" style="border: 3px solid black; background-color: #86b300; border-radius: 10px">
+    <html:button> Change Background</html:button>
+</foreignObject>   
+      
+</svg>
+</center>
+<br>
+<center>
+<svg id = "car_side" width="400" height="350" style="border:5px solid black; background-color: white">
+<text x="20" y="220" font-family="sans-serif" font-size="20px" fill="black">Side View</text>
+<!-- Top -->
+  <rect x="70" y="10" width="220" height="130" fill="transparent" rx="60" stroke="crimson" stroke-width="10" />
+
+<!-- Body -->
+  <rect x="10" y="70" width="340" height="80" fill="crimson" rx="30" />
+  
+<g>
+<!-- Left line -->
+  <line x1="145" y1="10" x2="145" y2="80" stroke="crimson" stroke-width="10"/>
+
+<!-- Right line -->
+  <line x1="215" y1="10" x2="215" y2="80" stroke="crimson" stroke-width="10"/>
+</g>
+
+<g>
+<!-- Left bumper -->
+  <rect x="0" y="110" width="40" height="20" fill="#999" rx="10" />
+
+<!-- Right bumper -->
+  <rect x="325" y="110" width="40" height="20" fill="#999" rx="10" />
+</g>  
+
+<!-- Left wheel -->
+<g>
+  <circle r="40px" fill="#222" stroke="white" stroke-width="7" cx="90" cy="140"/>    
+  <circle r="15px" fill="#555" cx="90" cy="140"/>
+</g>
+
+<!-- Right wheel -->
+<g>
+  <circle r="40px" fill="#222" stroke="white" stroke-width="7" cx="270" cy="140"/>
+  <circle r="15px" fill="#555" cx="270" cy="140"/>
+</g>  
+
+<g>
+<!-- Gold light -->
+  <circle r="15px" fill="gold" cx="340" cy="90"/>
+  
+<!-- Orange light -->
+  <circle r="10px" fill="orange" cx="15" cy="90"/>
+</g>  
+<foreignObject id="button5" x="200" y="220" width="100" height="40" style="border: 3px solid black; background-color: #86b300; border-radius: 10px">
+    <html:button> Change Background</html:button>
+</foreignObject>
+</svg> 
+
+
+<svg id="Side View" xmlns='http://www.w3.org/2000/svg' version='1.1' width="400" height="350" style="border:5px solid black; background-color: grey">
+    <!-- side View -->
+    <text x="20" y="300" font-family="sans-serif" font-size="20px" fill="black">Side View</text>
+    <rect x="80" y="120" width="200" height="130" style="fill:rgb(255,255,0);stroke-width:1;stroke:rgb(0,0,0)" /> 
+    <rect x="70" y="55" width="220" height="65" style="fill:rgb(255,0,0);stroke-width:1;stroke:rgb(0,0,0)" /> 
+    <rect x="95" y="40" width="30" height="15" style="fill:rgb(0,255,0);stroke-width:1;stroke:rgb(0,0,0)" />
+
+    <rect x="95" y="135" width="40" height="30" style="fill:black;stroke-width:1;stroke:rgb(0,0,0)" />
+
+    <rect x="225" y="135" width="40" height="30" style="fill:black;stroke-width:1;stroke:rgb(0,0,0)" />
+    
+    <line x1="115" y1="135" x2="115" y2="165" stroke-width="1" stroke="red"/>
+    <line x1="95" y1="150" x2="135" y2="150" stroke-width="1" stroke="red"/>
+    <line x1="245" y1="135" x2="245" y2="165" stroke-width="1" stroke="red"/>
+    <line x1="225" y1="150" x2="265" y2="150" stroke-width="1" stroke="red"/>
+    
+    <foreignObject id="button2" x="150" y="280" width="100" height="40" style="border: 3px solid black; background-color: #86b300; border-radius: 10px">
+        <html:button> Change Background</html:button>
+    </foreignObject>
+  </svg>
+
+</center>
+<br>
+<center>
+
+
+<svg id = "car_top" width="500" height="400"style="border:6px solid black; background-color: white">
+<text x="280" y="120" font-family="sans-serif" font-size="20px" fill="black">Top View</text>
+<!-- Top -->
+
+<rect x="30" y="10" width="180" height="340" fill="crimson" rx="30" stroke="crimson" stroke-width="10" />
+
+<rect x="30" y="30" width="180" height="60" fill="white" rx="10" stroke="crimson" stroke-width="10" />
+
+
+
+<rect x="32" y="110" width="3" height="120" fill="white" rx="10" stroke="white" stroke-width="10" />
+
+
+
+<rect x="204" y="110" width="3" height="120" fill="white" rx="10" stroke="white" stroke-width="10" />
+
+<rect x="30" y="230" width="180" height="80" fill="white" rx="30" stroke="crimson" stroke-width="10" />
+
+<rect x="45" y="100" width="150" height="120" fill="crimson" rx="0" stroke="black" stroke-width="4" />
+<g>
+
+<circle r="20px" fill="white" stroke="black" stroke-width="7" cx="80" 
+ cy="280" />
+
+<!--bumper -->
+  <rect x="26" y="0" width="180" height="15" fill="#999" rx="10" />
+  <rect x="26" y="340" width="180" height="15" fill="#999" rx="10" />
+
+</g>  
+<foreignObject id="button6" x="300" y="220" width="100" height="40" style="border: 3px solid black; background-color: #86b300; border-radius: 10px">
+    <html:button> Change Background</html:button>
+</foreignObject>
+</svg> 
+
+
+<svg id="Top View" xmlns='http://www.w3.org/2000/svg' version='1.1' width="400" height="300" style="border:5px solid black; background-color: grey">
+<text x="20" y="20" font-family="sans-serif" font-size="20px" fill="black">Top View</text>
+
+<rect x="70" y="55" width="220" height="65" style="fill:rgb(255,0,0);stroke-width:1;stroke:rgb(0,0,0)" /> 
+<rect x="70" y="120" width="220" height="65" style="fill:rgb(255,0,0);stroke-width:1;stroke:rgb(0,0,0)" /> 
+<rect x="85" y="75" width="20" height="20" style="fill:rgb(0,255,0);stroke-width:1;stroke:rgb(0,0,0)" /> 
+<foreignObject id="button3" x="200" y="220" width="100" height="40" style="border: 3px solid black; background-color: #86b300; border-radius: 10px">
+    <html:button> Change Background</html:button>
+</foreignObject>
+  </svg>
+</center>
+
+
+<script type="text/javascript">
+    var bt1=document.getElementById('button1');
+    var flag1=0;
+    bt1.addEventListener('click',function(evt){
+      if(flag1==0)
+      {     
+      document.getElementById("Front View").style.backgroundColor="blue"; 
+      flag1=1
+      }
+      else 
+      {
+        document.getElementById("Front View").style.backgroundColor="grey";
+        flag1=0;  
+      }
+    
+
+    },false);
+
+    var bt2=document.getElementById('button2');
+    var flag2=0
+    bt2.addEventListener('click',function(evt){
+      if(flag2==0)
+      {     
+      document.getElementById("Side View").style.backgroundColor="blue";  
+      flag2=1;
+      }
+      else 
+      {
+        document.getElementById("Side View").style.backgroundColor="grey";
+        flag2=0;  
+      }
+    
+
+    },false);
+
+    var bt3=document.getElementById('button3');
+    var flag3=0
+    bt3.addEventListener('click',function(evt){
+      if(flag3==0)
+      {     
+      document.getElementById("Top View").style.backgroundColor="green";  
+      flag3=1;
+      }
+      else 
+      {
+        document.getElementById("Top View").style.backgroundColor="grey";
+        flag3=0;  
+      }   
+
+    },false);
+
+
+var bt4=document.getElementById('button4');
+    var flag4=0;
+    bt4.addEventListener('click',function(evt){
+      if(flag4==0)
+      {     
+      document.getElementById("car_front").style.backgroundColor="blue"; 
+      flag4=1
+      }
+      else 
+      {
+        document.getElementById("car_front").style.backgroundColor="white";
+        flag4=0;  
+      }
+    
+
+    },false);
+
+    var bt5=document.getElementById('button5');
+    var flag5=0
+    bt5.addEventListener('click',function(evt){
+      if(flag5==0)
+      {     
+      document.getElementById("car_side").style.backgroundColor="blue";  
+      flag5=1;
+      }
+      else 
+      {
+        document.getElementById("car_side").style.backgroundColor="white";
+        flag5=0;  
+      }
+    
+
+    },false);
+
+    var bt6=document.getElementById('button6');
+    var flag6=0
+    bt6.addEventListener('click',function(evt){
+      if(flag6==0)
+      {     
+      document.getElementById("car_top").style.backgroundColor="green";  
+      flag6=1;
+      }
+      else 
+      {
+        document.getElementById("car_top").style.backgroundColor="white";
+        flag6=0;  
+      }   
+
+    },false);
+
+
+
+
+
+
+
+
+
+function scaling() {
+   
+  document.getElementById("car_top").style.transform = "scale(0.8,0.8)";
+  }
+scaling();
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

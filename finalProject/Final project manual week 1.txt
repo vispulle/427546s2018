@@ -1,0 +1,8 @@
+Computer Graphics Final project manual week 1 - March 28th
+Author: Viswanath Pulle
+email: viswanath_pulle@student.uml.edu
+
+Instructions:
+
+1.The page is a simple launch
+2. For background color, click on the respective buttons to change the colors

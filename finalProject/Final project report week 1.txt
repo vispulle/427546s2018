@@ -1,0 +1,13 @@
+Computer Graphics Final project report week 1 - March 28th
+Author: Viswanath Pulle
+email: viswanath_pulle@student.uml.edu
+
+For this week I have implemented:
+
+1. I have learned to use Scalar Vector Graphics to draw shapes instead of a canvas
+2. I have implemented the views of objects - Front, Side and Top views
+3. I have used bezeir curves to deal with trajectory oriented parts, and basic shapes like rectangles, circle and 
+other primitives for drawing the contours of the above said objects. I have played around with the rx values and the coordinates to make a right fit and correct shape. The culmination of all these shapes formed a wholesome object like a car and a house
+4. I have drawn the views for a Car and a House to understand how the projections work in different angles
+5. I also implemented the color changes of background for SVG 
+6.I want to make progress into working on different translation methods and also implement for generic objects after this week
